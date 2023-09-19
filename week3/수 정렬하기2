@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+int main(int argc, char** argv) 
+{
+	int a;
+	int n[1000001];
+	scanf("%d",&a);
+	for(int i = 0; i < a; i++)
+	{
+		scanf("%d",&n[i]);
+	}
+	sort(n,n + a);
+	for(int i = 0; i < a; i++)
+	{
+		printf("%d",n[i]);
+		printf("\n");
+	}
+	return 0;
+}
