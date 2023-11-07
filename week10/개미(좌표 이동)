@@ -1,0 +1,25 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char** argv) 
+{
+	int w,h,x,y,time,ant,xf,yf;
+	scanf("%d %d",&w,&h);
+	scanf("%d %d",&x,&y);
+	scanf("%d",&time);
+	xf = (x + time)%(w * 2);
+	yf = (y + time)%(h * 2);
+	if(xf > w)
+	{
+		xf = w * 2 - xf;
+	}
+	if(yf > h)
+	{
+		yf = h * 2 - yf;
+	}
+	printf("%d ",xf);
+	printf("%d",yf); 	 
+	return 0;
+}
