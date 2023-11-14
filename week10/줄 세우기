@@ -1,0 +1,19 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char** argv) 
+{
+	int a,n,d[1000001],m;
+	scanf("%d",&n);
+	for(int i = 1; i <= n; i++)
+	{
+		scanf("%d",&a);
+		d[a] = d[a - 1] + 1;
+		m = max(m, d[a]);
+	}
+	printf("%d\n",n - m);
+	return 0;
+}
