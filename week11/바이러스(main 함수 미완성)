@@ -1,0 +1,48 @@
+#include <cstdio>
+#include <iostream>
+#include <vector>
+#include <cstring>
+#include <queue>
+#include <algorithm>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+vector <int> v[10001];
+vector <int> a[10001];
+bool check[1001];
+vector <int> bfsResult;
+vector <int> dfsResult;
+int cnt = 0;
+void dfs(int start)
+{
+	for(int i = 0; i < a[start].size(); i++)
+	{
+		int next = a[start][i];
+		
+		if(check[next] == false)
+		{
+			check[next] = true;
+			cnt++; 
+			dfs(next);
+		}
+	}
+}
+
+
+int main()
+{
+	int n,m,u,v;
+	
+	scanf("%d %d",&n,&m);
+	
+	for(int i = 0; i < m; i++)
+	{
+		scanf("%d %d",&u , &v);
+		
+		a[u].push_back(v);
+		a[v].push_back(u);
+	}
+	
+	check[1] = true;
+	def(1); 
+	return 0;
+}
